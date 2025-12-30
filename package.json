@@ -13,7 +13,7 @@
 	},
 	"lint-staged": {
 		"*.{js,jsx,ts,tsx}": [
-			"npx eslint --fix",
+			"npx eslint --fix --max-warnings=0",
 			"npx prettier --write"
 		],
 		"*.{json,css,md}": [
