@@ -18,11 +18,11 @@ Every year, tons of edible food are wasted due to expiry dates, overstocking, an
 
 FreshSave provides:
 
-* A marketplace for **near-expiry food items**
-* **Discounted pricing** controlled by vendors
-* Real-time inventory visibility
-* Secure checkout and order tracking
-* Vendor dashboards for managing listings
+- A marketplace for **near-expiry food items**
+- **Discounted pricing** controlled by vendors
+- Real-time inventory visibility
+- Secure checkout and order tracking
+- Vendor dashboards for managing listings
 
 ---
 
@@ -30,27 +30,27 @@ FreshSave provides:
 
 ### 🛒 Buyer Features
 
-* Browse discounted food items
-* Filter by expiry date, category, price, and location
-* View detailed product information
-* Add to cart and checkout securely
-* Track orders and purchase history
-* Receive notifications for flash deals
+- Browse discounted food items
+- Filter by expiry date, category, price, and location
+- View detailed product information
+- Add to cart and checkout securely
+- Track orders and purchase history
+- Receive notifications for flash deals
 
 ### 🏪 Vendor Features
 
-* Vendor registration and verification
-* Create and manage product listings
-* Set expiry dates and dynamic discounts
-* Track sales and inventory
-* Analytics dashboard (sales, waste reduction impact)
+- Vendor registration and verification
+- Create and manage product listings
+- Set expiry dates and dynamic discounts
+- Track sales and inventory
+- Analytics dashboard (sales, waste reduction impact)
 
 ### 🛠️ Admin Features
 
-* Manage users (buyers & vendors)
-* Approve or suspend vendor accounts
-* Monitor platform transactions
-* Platform analytics and reporting
+- Manage users (buyers & vendors)
+- Approve or suspend vendor accounts
+- Monitor platform transactions
+- Platform analytics and reporting
 
 ---
 
@@ -58,19 +58,18 @@ FreshSave provides:
 
 ### Frontend
 
-* **Next.js** – React framework for production-grade apps
-* **TypeScript** – Type-safe development
-* **Tailwind CSS** – Utility-first styling
-* **React Query / TanStack Query** – Server state management
-* **Zod** – Schema validation
+- **Next.js** – React framework for production-grade apps
+- **TypeScript** – Type-safe development
+- **Tailwind CSS** – Utility-first styling
+- **React Query / TanStack Query** – Server state management
+- **Zod** – Schema validation
 
 ### Backend (Planned / Optional)
 
-* **Node.js /Next.js /Django /Go API Routes**
-* **PostgreSQL** (via Prisma)
-* **Authentication** – NextAuth / Auth.js
-* **Payments** – Stripe / Paystack (region-based)
-
+- **Node.js /Next.js /Django /Go API Routes**
+- **PostgreSQL** (via Prisma)
+- **Authentication** – NextAuth / Auth.js
+- **Payments** – Stripe / Paystack (region-based)
 
 ---
 
@@ -95,9 +94,9 @@ src/
 
 ## 🔐 Authentication & Authorization
 
-* Role-based access control (Buyer, Vendor, Admin)
-* Secure session handling
-* Protected routes using middleware
+- Role-based access control (Buyer, Vendor, Admin)
+- Secure session handling
+- Protected routes using middleware
 
 ---
 
@@ -105,33 +104,33 @@ src/
 
 EBA is more than a marketplace:
 
-* Reduces food waste
-* Lowers carbon footprint
-* Promotes responsible consumption
-* Supports affordable food access
+- Reduces food waste
+- Lowers carbon footprint
+- Promotes responsible consumption
+- Supports affordable food access
 
 Future versions will include **impact metrics** such as:
 
-* Food saved (kg)
-* CO₂ emissions reduced
+- Food saved (kg)
+- CO₂ emissions reduced
 
 ---
 
 ## 🧪 Testing (Planned)
 
-* Unit tests (Jest / Vitest)
-* Integration tests
+- Unit tests (Jest / Vitest)
+- Integration tests
 
 ---
 
 ## 🧭 Roadmap
 
-* [ ] MVP launch (buyers & vendors)
-* [ ] Mobile responsiveness
-* [ ] Vendor analytics dashboard
-* [ ] Flash sales & smart discounts
-* [ ] Push notifications
-* [ ] Mobile app (React Native / Expo)
+- [ ] MVP launch (buyers & vendors)
+- [ ] Mobile responsiveness
+- [ ] Vendor analytics dashboard
+- [ ] Flash sales & smart discounts
+- [ ] Push notifications
+- [ ] Mobile app (React Native / Expo)
 
 ---
 
@@ -139,8 +138,8 @@ Future versions will include **impact metrics** such as:
 
 ### Prerequisites
 
-* Node.js >= 18
-* npm / yarn / pnpm
+- Node.js >= 18
+- npm / yarn / pnpm
 
 ### Installation
 
@@ -181,4 +180,4 @@ This project is licensed under the **MIT License**.
 
 Built with the goal of combining **technology**, **sustainability**, and **community impact**.
 
-> *Save food. Save money. Save the planet.* 🌱
+> _Save food. Save money. Save the planet._ 🌱
