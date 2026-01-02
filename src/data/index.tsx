@@ -55,12 +55,12 @@ export const slides: Slide[] = [
 	{
 		bgImage: '/can-store.jpg',
 		customContent: (
-			<div className="text-left p-6 md:p-12 w-full text-white">
+			<div className="text-left p-4 md:p-12 w-full text-white">
 				<span className="inline-block mb-3 rounded-full bg-eba-green px-3 py-1 text-xs font-medium">
 					Save up to 70%
 				</span>
 
-				<h1 className="text-4xl md:text-5xl font-bold mb-4">
+				<h1 className="text-3xl md:text-5xl font-bold mb-4">
 					Smart Shopping,
 					<br />
 					Bigger Savings
@@ -81,12 +81,12 @@ export const slides: Slide[] = [
 	{
 		bgImage: '/fruit-store.jpg',
 		customContent: (
-			<div className="text-left p-6 md:p-12 w-full text-white">
+			<div className="text-left p-4 md:p-12 w-full text-white">
 				<span className="inline-block mb-3 rounded-full bg-eba-green px-3 py-1 text-xs font-medium">
 					Reduce Waste
 				</span>
 
-				<h1 className="text-4xl md:text-5xl font-bold mb-4">
+				<h1 className="text-3xl md:text-5xl font-bold mb-4">
 					Fresh Deals,
 					<br />
 					Before They Expire
@@ -108,12 +108,12 @@ export const slides: Slide[] = [
 	{
 		bgImage: '/shopping-together.jpg',
 		customContent: (
-			<div className="text-center p-6 md:p-12 w-full text-white">
+			<div className="text-center p-4 md:p-12 w-full text-white">
 				<span className="inline-block mb-3 rounded-full bg-orange-500/90 px-3 py-1 text-xs font-medium">
 					Limited Time
 				</span>
 
-				<h1 className="text-4xl md:text-5xl font-bold mb-4">Last-Chance Deals</h1>
+				<h1 className="text-3xl md:text-5xl font-bold mb-4">Last-Chance Deals</h1>
 
 				<p className="mb-6 text-white/90">
 					These products won’t last long. Grab them before expiry and enjoy massive
