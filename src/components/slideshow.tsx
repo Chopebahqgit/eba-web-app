@@ -72,7 +72,7 @@ export function SlideShow({
 
 						{slide.customContent && (
 							<div
-								className={`absolute inset-0 flex items-center justify-center px-4 md:px-12 transition-all duration-700 ${
+								className={`absolute inset-0 flex items-center justify-center  md:px-12 transition-all duration-700 ${
 									isActive
 										? 'opacity-100 translate-y-0'
 										: 'opacity-0 translate-y-6'
