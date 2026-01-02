@@ -49,7 +49,7 @@ export default function ProductDetailPage() {
 
 	return (
 		<div className="flex flex-col items-center font-sans dark:bg-black min-h-screen">
-			<div className="md:w-[80%] flex-col justify-center items-center px-4 sm:px-6 lg:px-8 py-8">
+			<div className="w-full md:w-[80%] flex-col justify-center items-center px-4 lg:px-8 py-8">
 				<div className="mb-8">
 					<Breadcrumb>
 						<BreadcrumbList>
