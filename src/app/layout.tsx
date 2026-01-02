@@ -27,11 +27,14 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<div className="flex flex-col w-full">
-					<TopUtilitySearchBar />
-					<Navigation />
+				<div className="min-h-screen">
+					<header className="fixed top-0 z-50 w-full border-b bg-white">
+						<TopUtilitySearchBar />
+						<Navigation />
+					</header>
+
+					<main className="pt-28">{children}</main>
 				</div>
-				{children}
 			</body>
 		</html>
 	);
