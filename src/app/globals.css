@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--color-eba-green: oklch(0.558 0.169 142.89);
-	/* --color-eba-orange: oklch(0.793 0.161 144.55); */
+	--color-eba-primary: oklch(0.558 0.169 142.89);
+	--color-eba-secondary: oklch(0.706 0.233 45.2);
 }
 
 @theme inline {
@@ -124,7 +124,45 @@
 	* {
 		@apply border-border outline-ring/50;
 	}
+	[type='text'],
+	[type='email'],
+	[type='password'],
+	[type='number'],
+	[type='date'],
+	[type='tel'],
+	[type='phone'],
+	textarea,
+	select {
+		@apply w-full px-4 py-2.5 
+            bg-input
+            border
+            border-gray-300
+            focus:ring-1
+            focus:outline-none
+            focus:border-ring
+            transition-all
+            rounded;
+	}
+	input[type='number']::-webkit-inner-spin-button,
+	input[type='number']::-webkit-outer-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	input[type='checkbox'] {
+		@apply h-5 w-5 
+            rounded-md border-gray-300 
+            focus:ring-primary/50 
+            hover:cursor-pointer;
+	}
+
+	.input-label {
+		@apply mb-1 text-sm font-medium text-gray-700;
+	}
+	textarea {
+		@apply resize-none min-h-22.5;
+	}
 	body {
-		@apply bg-background text-foreground;
+		@apply bg-background text-foreground font-sans;
 	}
 }

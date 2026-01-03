@@ -1,3 +1,5 @@
+import { LucideIcon } from 'lucide-react';
+
 export interface ProductProps {
 	id: string;
 	name: string;
@@ -6,7 +8,7 @@ export interface ProductProps {
 	price: number;
 	originalPrice?: number | null;
 	discountPercentage?: number;
-
+	store: string;
 	inStock: boolean;
 	inventory: number;
 	minOrderQty?: number;
@@ -54,3 +56,9 @@ export interface ProductFeature {
 	id: string;
 	feature: string;
 }
+
+export type StoreItem = {
+	id: string;
+	name: string;
+	icon: LucideIcon;
+};

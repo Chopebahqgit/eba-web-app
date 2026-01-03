@@ -1,7 +1,5 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import Navigation from '@/components/navbar/navigation';
-import TopUtilitySearchBar from '@/components/navbar/utility-bar';
 import './globals.css';
 
 const geistSans = Geist({
@@ -28,12 +26,7 @@ export default function RootLayout({
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
 				<div className="min-h-screen">
-					<header className="fixed top-0 z-50 w-full border-b bg-white">
-						<TopUtilitySearchBar />
-						<Navigation />
-					</header>
-
-					<main className="pt-28">{children}</main>
+					<main className="">{children}</main>
 				</div>
 			</body>
 		</html>

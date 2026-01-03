@@ -108,7 +108,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
 							disabled={!product.inStock}
 							className={`w-full py-5 rounded-2xl  md:text-lg transition-colors duration-300 ${
 								product.inStock
-									? 'bg-eba-green text-white'
+									? 'bg-eba-primary text-white'
 									: 'bg-gray-700 text-gray-500 cursor-not-allowed'
 							}`}
 							label={product.inStock ? 'Add to Cart' : 'Out of Stock'}

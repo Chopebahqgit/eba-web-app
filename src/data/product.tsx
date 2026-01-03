@@ -1,4 +1,5 @@
 import { ProductCategory, ProductTag, ProductProps } from '@/types/products';
+import { Store, ShoppingCart, Building2, ShoppingBag, Warehouse } from 'lucide-react';
 
 export const categories: ProductCategory[] = [
 	{ id: 'cat-1', name: 'Groceries' },
@@ -23,6 +24,7 @@ export const products: ProductProps[] = [
 		price: 650,
 		originalPrice: 1200,
 		discountPercentage: 46,
+		store: 'Just Rite mall',
 		inStock: true,
 		inventory: 120,
 		expiryDate: '2026-01-02T00:00:59Z',
@@ -57,6 +59,7 @@ export const products: ProductProps[] = [
 		price: 420,
 		originalPrice: 750,
 		discountPercentage: 44,
+		store: 'Shoprite mall',
 		inStock: true,
 		inventory: 80,
 		expiryDate: '2026-01-12T23:59:59Z',
@@ -95,6 +98,7 @@ export const products: ProductProps[] = [
 		price: 180,
 		originalPrice: 350,
 		discountPercentage: 49,
+		store: 'Booku Mart',
 		inStock: true,
 		inventory: 300,
 		expiryDate: '2026-02-02T23:59:59Z',
@@ -125,6 +129,7 @@ export const products: ProductProps[] = [
 		price: 900,
 		originalPrice: 1500,
 		discountPercentage: 40,
+		store: 'Maryland Mart',
 		inStock: true,
 		inventory: 60,
 		expiryDate: '2026-01-08T23:59:59Z',
@@ -319,4 +324,32 @@ export const products: ProductProps[] = [
 	// 	createdAt: '2025-11-28',
 	// 	updatedAt: '2025-12-25',
 	// },
+];
+
+export const STORES = [
+	{
+		id: 'shoprite',
+		name: 'Shoprite',
+		icon: Store,
+	},
+	{
+		id: 'spar',
+		name: 'SPAR',
+		icon: ShoppingCart,
+	},
+	{
+		id: 'market-square',
+		name: 'Market Square',
+		icon: Building2,
+	},
+	{
+		id: 'justrite',
+		name: 'Justrite',
+		icon: ShoppingBag,
+	},
+	{
+		id: 'local-market',
+		name: 'Local Market',
+		icon: Warehouse,
+	},
 ];
