@@ -48,7 +48,7 @@ const ProductGallery: React.FC<ProductGalleryProps> = ({
 
 	const thumbClass = (active: boolean) =>
 		`relative rounded-md overflow-hidden transition-all p-1 ${
-			active ? 'border-2 border-eba-green' : 'opacity-80 hover:opacity-100'
+			active ? 'border-2 border-eba-primary' : 'opacity-80 hover:opacity-100'
 		}`;
 
 	return (

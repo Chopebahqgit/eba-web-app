@@ -22,6 +22,8 @@
 		]
 	},
 	"dependencies": {
+		"@hookform/error-message": "^2.0.1",
+		"@hookform/resolvers": "^5.2.2",
 		"@radix-ui/react-separator": "^1.1.8",
 		"@radix-ui/react-slot": "^1.2.4",
 		"class-variance-authority": "^0.7.1",
@@ -31,7 +33,9 @@
 		"radix-ui": "^1.4.3",
 		"react": "19.2.3",
 		"react-dom": "19.2.3",
-		"tailwind-merge": "^3.4.0"
+		"react-hook-form": "^7.69.0",
+		"tailwind-merge": "^3.4.0",
+		"zod": "^4.3.4"
 	},
 	"devDependencies": {
 		"@tailwindcss/postcss": "^4",
