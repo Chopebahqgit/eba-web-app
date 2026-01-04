@@ -3,6 +3,7 @@
 import { useState, useEffect, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 export type Slide = {
 	bgImage?: string;
@@ -17,6 +18,7 @@ interface SlideShowProps {
 	interval?: number;
 	transitionDuration?: number;
 	mode?: TransitionMode;
+	className?: string;
 }
 
 export function SlideShow({
@@ -24,6 +26,7 @@ export function SlideShow({
 	interval = 5000,
 	transitionDuration = 1000,
 	mode = 'fade',
+	className,
 }: SlideShowProps) {
 	const [current, setCurrent] = useState(0);
 
@@ -36,7 +39,8 @@ export function SlideShow({
 	}, [slides.length, interval]);
 
 	return (
-		<div className="relative w-full h-100 md:h-125 overflow-hidden">
+		<div className={cn('relative w-full h-full overflow-hidden', className)}>
+			{/* <div className={cn('relative w-full h-100 md:h-125 overflow-hidden', className)}> */}
 			{slides.map((slide, i) => {
 				const isActive = i === current;
 
@@ -90,7 +94,7 @@ export function SlideShow({
 					<button
 						key={i}
 						onClick={() => setCurrent(i)}
-						className={`h-3 w-3 rounded-full transition-all ${
+						className={`h-2 w-2 md:h-3 md:w-3 rounded-full transition-all ${
 							i === current ? 'bg-white scale-125' : 'bg-white/40'
 						}`}
 					/>

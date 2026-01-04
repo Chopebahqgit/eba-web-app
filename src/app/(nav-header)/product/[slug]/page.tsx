@@ -48,8 +48,8 @@ export default function ProductDetailPage() {
 	}
 
 	return (
-		<div className="flex flex-col items-center font-sans dark:bg-black min-h-screen">
-			<div className="w-full md:w-[80%] flex-col justify-center items-center px-4 lg:px-8 py-8">
+		<div className="flex flex-col items-center font-sans dark:bg-black">
+			<div className="w-full md:w-[80%] flex-col justify-center items-center px-4 lg:px-2 py-4">
 				<div className="mb-8">
 					<Breadcrumb>
 						<BreadcrumbList>
@@ -58,7 +58,9 @@ export default function ProductDetailPage() {
 							</BreadcrumbItem>
 							<BreadcrumbSeparator />
 							<BreadcrumbItem>
-								<BreadcrumbLink>{product.name}</BreadcrumbLink>
+								<BreadcrumbLink className="text-eba-primary">
+									{product.name}
+								</BreadcrumbLink>
 							</BreadcrumbItem>
 						</BreadcrumbList>
 					</Breadcrumb>
@@ -87,7 +89,7 @@ export default function ProductDetailPage() {
 								key={tab}
 								className={`py-4 px-1 text-sm font-medium border-b-2 ${
 									activeTab === tab
-										? 'border-eba-green text-eba-green'
+										? 'border-eba-primary text-eba-primary'
 										: 'border-transparent text-foreground hover:text-gray-600'
 								}`}
 								onClick={() => setActiveTab(tab as typeof activeTab)}

@@ -54,6 +54,7 @@ const ProductCardComponent: React.FC<ProductCardProps> = ({ product, onAddToCart
 			<ProductExpiryCountdown expiryDate={product.expiryDate} />
 
 			<div className="p-2 ">
+				<h3 className="text-xs font-semibold text-eba-primary">{product.store}</h3>
 				<h3 className="text-sm font-semibold text-muted-foreground">{product.name}</h3>
 
 				<div className="flex justify-between">
