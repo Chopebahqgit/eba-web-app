@@ -89,15 +89,25 @@ export function SlideShow({
 				);
 			})}
 
-			<div className="absolute bottom-4 left-6 flex space-x-3 z-10">
+			<div
+				className="absolute bottom-2 md:bottom-4 left-3 md:left-6 flex space-x-1 z-10"
+				role="group"
+				aria-label="Slide navigation"
+			>
 				{slides.map((_, i) => (
 					<button
 						key={i}
 						onClick={() => setCurrent(i)}
-						className={`h-2 w-2 md:h-3 md:w-3 rounded-full transition-all ${
-							i === current ? 'bg-white scale-125' : 'bg-white/40'
-						}`}
-					/>
+						aria-label={`Go to slide ${i + 1}`}
+						aria-current={i === current ? 'true' : undefined}
+						className="flex items-center justify-center h-8 w-5 md:h-11 md:w-8"
+					>
+						<span
+							className={`block rounded-full transition-all ${
+								i === current ? 'h-3 w-3 bg-white scale-125' : 'h-2 w-2 bg-white/40'
+							}`}
+						/>
+					</button>
 				))}
 			</div>
 
@@ -106,6 +116,7 @@ export function SlideShow({
 					variant="outline"
 					size="icon"
 					onClick={() => setCurrent(prev => (prev - 1 + slides.length) % slides.length)}
+					aria-label="Goto previous banner"
 				>
 					<ArrowLeft />
 				</Button>
@@ -113,6 +124,7 @@ export function SlideShow({
 					variant="outline"
 					size="icon"
 					onClick={() => setCurrent(prev => (prev + 1) % slides.length)}
+					aria-label="Goto next banner"
 				>
 					<ArrowRight />
 				</Button>

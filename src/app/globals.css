@@ -4,8 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-	--color-eba-primary: oklch(0.558 0.169 142.89);
 	--color-eba-secondary: oklch(0.706 0.233 45.2);
+	--color-eba-primary: oklch(0.51 0.3 136.02);
 }
 
 @theme inline {

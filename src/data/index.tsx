@@ -71,7 +71,7 @@ export const slides: Slide[] = [
 		bgImage: '/can-store.jpg',
 		customContent: (
 			<div className="text-left px-4 md:p-12 w-full text-white">
-				<span className="inline-block mb-3 rounded-full bg-eba-primary px-3 py-1 text-xs font-medium">
+				<span className="inline-block mb-3 rounded-full bg-eba-secondary/90 px-3 py-1 text-xs font-medium">
 					Save up to 70%
 				</span>
 
@@ -139,7 +139,9 @@ export const slides: Slide[] = [
 					while they’re in stock.
 				</p>
 
-				<Button className="bg-primary hover:bg-primary/90">View Current Offers</Button>
+				<Button className="border border-white bg-white text-black hover:bg-white/90">
+					View Current Offers
+				</Button>
 			</div>
 		),
 	},

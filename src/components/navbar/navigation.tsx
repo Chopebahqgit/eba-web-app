@@ -104,8 +104,9 @@ export default function Navigation({
 								className="group size-9 border ml-1 hover:bg-primary md:hidden"
 								size="icon"
 								variant="ghost"
+								aria-label="Open user menu"
 							>
-								<Menu size={18} className="text-white" />
+								<Menu size={18} className="text-white" aria-hidden="true" />
 							</Button>
 						</PopoverTrigger>
 						<PopoverContent align="start" className="w-64 p-1 md:hidden">
@@ -297,7 +298,11 @@ export default function Navigation({
 					{/* User icon - conditional based on authentication */}
 					{isAuthenticated ? (
 						<div className="relative group">
-							<div className="flex items-center gap-2 cursor-pointer">
+							<Link
+								href={'/account/dashboard'}
+								className="flex items-center gap-2"
+								aria-label={`Go to ${user?.name ?? 'account'} dashboard`}
+							>
 								{user?.avatar ? (
 									<Image
 										src={user.avatar}
@@ -312,7 +317,7 @@ export default function Navigation({
 								<span className="hidden md:inline text-white text-sm">
 									{user?.name || 'Account'}
 								</span>
-							</div>
+							</Link>
 						</div>
 					) : (
 						<>

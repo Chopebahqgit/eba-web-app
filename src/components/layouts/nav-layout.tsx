@@ -113,7 +113,6 @@ export default function StoreNavLayout({
 							</aside>
 						)}
 
-						{/* HERO */}
 						{hero && (
 							<div
 								className={`transition-all duration-300 ease-in-out ${
