@@ -40,12 +40,16 @@ interface NavigationProps {
 		avatar?: string;
 	} | null;
 	onLogout?: () => void;
+	cartCount: number;
+	onCartClick: () => void;
 }
 
 export default function Navigation({
 	isAuthenticated = false,
 	user = null,
 	onLogout,
+	cartCount,
+	onCartClick,
 }: NavigationProps) {
 	const pathname = usePathname();
 	const [navigationLinks, setNavigationLinks] = useState<NavLink[]>(() =>
@@ -284,18 +288,24 @@ export default function Navigation({
 					</div>
 				</div>
 
-				{/* Right side icons */}
 				<div className="flex items-center gap-3 text-sm px-3">
 					<Heart className="h-5 w-5 text-white cursor-pointer hover:text-gray-200" />
 
-					<div className="relative cursor-pointer">
+					<div
+						className="relative cursor-pointer"
+						onClick={onCartClick}
+						role="button"
+						aria-label="Open cart"
+					>
 						<ShoppingCart className="h-5 w-5 text-white hover:text-gray-200" />
-						<span className="absolute -right-2 -top-2 flex h-4 w-4 items-center text-white justify-center rounded-full bg-eba-primary text-[10px] font-medium">
-							3
-						</span>
+
+						{cartCount > 0 && (
+							<span className="absolute -right-2 -top-2 flex h-4 min-w-4 items-center justify-center rounded-full bg-eba-primary px-1 text-[10px] font-medium text-white">
+								{cartCount}
+							</span>
+						)}
 					</div>
 
-					{/* User icon - conditional based on authentication */}
 					{isAuthenticated ? (
 						<div className="relative group">
 							<Link
