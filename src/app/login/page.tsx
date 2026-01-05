@@ -10,7 +10,6 @@ import Link from 'next/link';
 import { SlideShow } from '@/components/slideshow';
 import { signInSlides } from '@/data';
 import NewsLetter from '@/components/newsletter';
-import PublicNavBar from '@/components/navbar/public-navbar';
 import Footer from '@/components/footer';
 import { useRouter } from 'next/navigation';
 
@@ -35,10 +34,6 @@ export default function Login() {
 		<>
 			{' '}
 			<div className="flex flex-col min-h-screen">
-				<div className="fixed top-0 left-0 w-full z-50">
-					<PublicNavBar />
-				</div>
-
 				<div className="flex-1 flex flex-col lg:flex-row">
 					<div className="hidden lg:block lg:w-1/2">
 						<SlideShow slides={signInSlides} className="h-full" />

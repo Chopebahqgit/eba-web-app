@@ -9,11 +9,13 @@ import { StoreItem } from '@/types/products';
 
 type SidebarMode = 'push' | 'overlay';
 
-type StoreNavLayoutProps = {
+type NavLayoutProps = {
 	children: ReactNode;
 	stores: StoreItem[];
 	activeStore: string;
 	onSelectStore: (id: string) => void;
+	cartCount: number;
+	onCartClick: () => void;
 	hero?: ReactNode;
 	sidebarMode?: SidebarMode;
 	isAuthenticated?: boolean;
@@ -25,7 +27,7 @@ type StoreNavLayoutProps = {
 	onLogout?: () => void;
 };
 
-export default function StoreNavLayout({
+export default function NavLayout({
 	children,
 	stores,
 	activeStore,
@@ -35,20 +37,19 @@ export default function StoreNavLayout({
 	isAuthenticated = false,
 	user = null,
 	onLogout = () => {},
-}: StoreNavLayoutProps) {
+	cartCount,
+	onCartClick,
+}: NavLayoutProps) {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 	const isOverlay = sidebarMode === 'overlay';
 
 	return (
 		<div className="w-full h-full flex flex-col">
-			{/* FIXED HEADER */}
 			<div className="fixed top-0 left-0 right-0 z-50 bg-white">
 				<div className="w-full md:w-4/5 md:mx-auto">
 					<TopUtilitySearchBar />
 
 					<div className="relative flex w-full">
-						{/* STORE TOGGLER */}
 						<div
 							className="hidden md:flex h-14 cursor-pointer items-center justify-between gap-2 bg-primary/80 text-white md:w-1/4"
 							onClick={() => setIsMenuOpen(prev => !prev)}
@@ -73,10 +74,11 @@ export default function StoreNavLayout({
 								isAuthenticated={isAuthenticated}
 								user={user}
 								onLogout={onLogout}
+								cartCount={cartCount}
+								onCartClick={onCartClick}
 							/>
 						</div>
 
-						{/* OVERLAY MODE */}
 						{isOverlay && isMenuOpen && (
 							<div className="absolute left-0 top-full z-40 hidden md:block md:w-1/4 bg-white border-x shadow-lg">
 								<SidebarDropdown
@@ -90,11 +92,9 @@ export default function StoreNavLayout({
 				</div>
 			</div>
 
-			{/* CONTENT */}
 			<div className="flex-1 overflow-y-auto mt-28">
 				<div className="w-full md:mx-auto">
 					<div className="flex w-full">
-						{/* PUSH MODE */}
 						{!isOverlay && (
 							<aside
 								className={`hidden md:block transition-all duration-300 ease-in-out ${
@@ -113,7 +113,6 @@ export default function StoreNavLayout({
 							</aside>
 						)}
 
-						{/* HERO */}
 						{hero && (
 							<div
 								className={`transition-all duration-300 ease-in-out ${
