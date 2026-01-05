@@ -72,8 +72,9 @@ const ProductCardComponent: React.FC<ProductCardProps> = ({ product, onAddToCart
 						disabled={!product.inStock}
 						className="rounded-full bg-gray-200 hover:bg-gray-300"
 						size={'icon'}
+						aria-label="Add to cart"
 					>
-						<Handbag className="text-black" />
+						<Handbag className="text-black" aria-hidden="true" />
 					</Button>
 				</div>
 			</div>

@@ -21,6 +21,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
 	return (
 		<div>
 			<h1 className="text-xl md:text-xl font-medium text-foreground mb-1">{product.name}</h1>
+			<p className="text-eba-secondary font-bold text-sm mb-2">{product.store}</p>
 
 			<div className="flex items-center mb-2">
 				<div className="flex ">
@@ -44,6 +45,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
 						</svg>
 					))}
 				</div>
+
 				<span className="text-xs text-gray-400 ml-2">
 					{product.rating} ({product.reviewCount} reviews)
 				</span>
