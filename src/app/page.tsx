@@ -2,10 +2,15 @@
 
 import { products } from '@/data/product';
 import ProductGrid from '@/components/products/product-grid';
-import { useCart } from '@/context/cartContext';
+import { useCart } from '@/context/cart/cartContext';
+import { ProductProps } from '@/types/products';
 
 export default function Home() {
 	const { addToCart } = useCart();
+
+	const handleAddToCart = (product: ProductProps) => {
+		addToCart(product, 1);
+	};
 
 	return (
 		<div className="">
@@ -13,7 +18,7 @@ export default function Home() {
 				<h2 className="mb-2 text-xl font-bold">New Deals</h2>
 				<ProductGrid
 					products={products}
-					onAddToCart={addToCart}
+					onAddToCart={handleAddToCart}
 					emptyMessage="No discounted items at the moment"
 				/>
 			</section>

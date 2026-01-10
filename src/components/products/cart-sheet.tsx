@@ -11,6 +11,7 @@ interface CartSheetProps {
 	open: boolean;
 	onOpenChange: (open: boolean) => void;
 	onCheckout: () => void;
+	onGotoCart: () => void;
 	onRemoveProduct: (id: string) => void;
 	isLoading?: boolean;
 }
@@ -21,6 +22,7 @@ export default function CartSheet({
 	onOpenChange,
 	onCheckout,
 	onRemoveProduct,
+	onGotoCart,
 	isLoading = false,
 }: CartSheetProps) {
 	return (
@@ -103,6 +105,14 @@ export default function CartSheet({
 							onClick={onCheckout}
 							disabled={isLoading}
 							label="Checkout"
+							isLoading={isLoading}
+						/>
+						<Button
+							className="w-full rounded-full bg-green-300/30 hover:bg-green-700/60 hover:text-white text-eba-primary"
+							size="lg"
+							onClick={onGotoCart}
+							disabled={isLoading}
+							label="Cart"
 							isLoading={isLoading}
 						/>
 					</CardFooter>

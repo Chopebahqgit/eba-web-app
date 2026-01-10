@@ -32,15 +32,14 @@ export default function Login() {
 
 	return (
 		<>
-			{' '}
 			<div className="flex flex-col min-h-screen">
 				<div className="flex-1 flex flex-col lg:flex-row">
 					<div className="hidden lg:block lg:w-1/2">
 						<SlideShow slides={signInSlides} className="h-full" />
 					</div>
 
-					<div className="flex-1 flex flex-col md:mt-8">
-						<div className="flex-1 flex items-center justify-center bg-gray-50 p-4">
+					<div className="flex-1 flex flex-col bg-gray-50">
+						<div className="flex-1 flex items-center justify-center  p-4">
 							<div className="w-full max-w-md border bg-white rounded-md space-y-5">
 								<CardHeader className="text-center pt-6">
 									<CardTitle className="text-xl md:text-2xl font-bold">

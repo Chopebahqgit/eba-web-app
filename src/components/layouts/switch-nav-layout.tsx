@@ -2,12 +2,11 @@
 
 import { ReactNode, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { useCart } from '@/context/cartContext';
+import { useCart } from '@/context/cart/cartContext';
 import { STORES } from '@/data/product';
 import { SlideShow } from '@/components/slideshow';
 import { slides } from '@/data';
 import CartSheet from '@/components/products/cart-sheet';
-
 import NavLayout from './nav-layout';
 import PublicNavBar from '../navbar/public-navbar';
 
@@ -65,6 +64,10 @@ export default function SwitchNavBar({ children }: Props) {
 				onCheckout={() => {
 					closeCart();
 					router.push('/checkout');
+				}}
+				onGotoCart={() => {
+					closeCart();
+					router.push('/cart');
 				}}
 			/>
 		</div>

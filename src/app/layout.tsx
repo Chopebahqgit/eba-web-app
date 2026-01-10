@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
+import Provider from '@/providers';
 import './globals.css';
-
 import SwitchNavBar from '@/components/layouts/switch-nav-layout';
-import { CartProvider } from '@/context/cartContext';
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -24,13 +23,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-				<CartProvider>
+				<Provider>
 					<SwitchNavBar>
 						<main id="main-content" className="flex-1">
 							{children}
 						</main>
 					</SwitchNavBar>
-				</CartProvider>
+				</Provider>
 			</body>
 		</html>
 	);

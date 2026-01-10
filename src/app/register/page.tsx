@@ -40,7 +40,7 @@ export default function Register() {
 						<SlideShow slides={signInSlides} className="h-full" />
 					</div>
 
-					<div className="flex-1 flex flex-col mt-8">
+					<div className="flex-1 flex flex-col">
 						<div className="flex-1 flex items-center justify-center bg-gray-50 p-4">
 							<div className="w-full max-w-md border bg-white rounded-md space-y-5">
 								<CardHeader className="text-center pt-6">

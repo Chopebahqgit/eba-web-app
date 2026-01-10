@@ -2,19 +2,22 @@ import { ProductProps } from '@/types/products';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
 import { Handbag } from 'lucide-react';
+import { Plus, Minus } from 'lucide-react';
 
 interface ProductInfoProps {
 	product: ProductProps;
-	quantity: number;
-	onQuantityChange: (quantity: number) => void;
+	onIncrease: (id: string) => void;
+	onDecrease: (id: string) => void;
 	onAddToCart: () => void;
+	quantity: number;
 }
 
 const ProductInfo: React.FC<ProductInfoProps> = ({
 	product,
-	quantity,
-	onQuantityChange,
+	onIncrease,
+	onDecrease,
 	onAddToCart,
+	quantity,
 }) => {
 	const hasDiscount = product.originalPrice && product.originalPrice > product.price;
 
@@ -87,22 +90,24 @@ const ProductInfo: React.FC<ProductInfoProps> = ({
 				</div>
 
 				<div className="mb-8 flex gap-4 items-center flex-wrap md:flex-nowrap">
-					<div className="flex items-center">
-						<button
-							onClick={() => onQuantityChange(Math.max(1, quantity - 1))}
-							className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-700 rounded-l-lg bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+					<div className="flex items-center justify-center  border rounded-2xl p-1">
+						<Button
+							onClick={() => onDecrease(product.id)}
+							className="hover:bg-gray-200 transition border rounded-full bg-gray-100 text-black"
+							aria-label="Decrease quantity"
+							size={'icon'}
 						>
-							−
-						</button>
-						<div className="w-16 h-10 flex items-center justify-center border-y border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-medium">
-							{quantity}
-						</div>
-						<button
-							onClick={() => onQuantityChange(quantity + 1)}
-							className="w-10 h-10 flex items-center justify-center border border-gray-300 dark:border-gray-700 rounded-r-lg bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+							<Minus size={16} />
+						</Button>
+						<span className="w-12 text-center font-medium text-black">{quantity}</span>
+						<Button
+							onClick={() => onIncrease(product.id)}
+							className="hover:bg-gray-200 transition  border rounded-full bg-gray-100 text-black"
+							aria-label="Increase quantity"
+							size={'icon'}
 						>
-							+
-						</button>
+							<Plus size={16} />
+						</Button>
 					</div>
 					<div className="w-full flex items-end">
 						<Button

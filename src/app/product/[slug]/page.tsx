@@ -6,6 +6,7 @@ import ProductGallery from '@/components/products/product-gallery';
 import ProductInfo from '@/components/products/product-info';
 import { products } from '@/data/product';
 import { ProductProps } from '@/types/products';
+import { useCart } from '@/context/cart/cartContext';
 
 import {
 	Breadcrumb,
@@ -18,12 +19,14 @@ import {
 export default function ProductDetailPage() {
 	const params = useParams();
 	const slug = params.slug as string;
-
+	const { addToCart } = useCart();
 	const [selectedImage, setSelectedImage] = useState(0);
 	const [quantity, setQuantity] = useState(1);
 	const [activeTab, setActiveTab] = useState<'description' | 'features' | 'reviews'>(
 		'description',
 	);
+	const increase = () => setQuantity(q => q + 1);
+	const decrease = () => setQuantity(q => Math.max(1, q - 1));
 
 	const product: ProductProps | undefined = useMemo(
 		() => products.find(p => p.slug === slug),
@@ -31,13 +34,6 @@ export default function ProductDetailPage() {
 	);
 
 	console.log(product);
-
-	const handleAddToCart = () => {
-		console.log('Add to cart:', {
-			product,
-			quantity,
-		});
-	};
 
 	if (!product) {
 		return (
@@ -77,8 +73,9 @@ export default function ProductDetailPage() {
 					<ProductInfo
 						product={product}
 						quantity={quantity}
-						onQuantityChange={setQuantity}
-						onAddToCart={handleAddToCart}
+						onIncrease={increase}
+						onDecrease={decrease}
+						onAddToCart={() => addToCart(product, quantity)}
 					/>
 				</div>
 
@@ -122,7 +119,7 @@ export default function ProductDetailPage() {
 									product.features.map((f, index) => (
 										<li key={index} className="flex items-start">
 											<svg
-												className="h-5 w-5 text-gold-deep mt-0.5 mr-3 flex-shrink-0"
+												className="h-5 w-5 text-gold-deep mt-0.5 mr-3 shrink-0"
 												viewBox="0 0 20 20"
 												fill="currentColor"
 											>
